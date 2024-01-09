@@ -78,26 +78,6 @@ Exiting...
 
 - Load words from a JSON file into a Python dictionary.
 
-## Future Perspectives
-
-1. Add more typing categories.
-2. Implement a time-based challenge mode.
-
-## File Structure
-
-- `main.py`: Main script containing the core logic and user interface.
-- `username_input.py`: Function to capture user input for the username.
-- `start_typing_test.py`: Functionality for starting and measuring typing tests.
-- `show_leaderboard.py`: Displaying the leaderboard.
-- `exit_program.py`: Graceful exit from the program.
-- `update_leaderboard.py`: Updating and sorting the leaderboard.
-- `load_words_from_json.py`: Loading words from a JSON file.
-- `get_user_input.py`: Capturing user input.
-  
-## Acknowledgments
-
-- This project was created as part of a learning exercise to practice Python programming.
-
 Feel free to explore and contribute to make this typing test application even better!
 
 ---

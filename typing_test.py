@@ -2,6 +2,7 @@
 
 def get_username():
     return input("Enter your username: ")
+
 # start_typing_test
 
 def start_typing_test(words_to_type):

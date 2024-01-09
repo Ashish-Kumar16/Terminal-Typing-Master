@@ -1,3 +1,8 @@
+# exit_program
+
+def exit_program():
+    print("Exiting...")
+    sys.exit(0)
 # update_leaderboard
 
 def update_leaderboard(username, wpm):

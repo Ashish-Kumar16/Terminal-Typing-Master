@@ -24,7 +24,7 @@ Welcome to the Terminal Typing Master, a simple typing test application in Pytho
 3. Run the application:
 
    ```bash
-   python main.py
+   python typing_test.py
    ```
 
 ## Features
@@ -77,7 +77,5 @@ Exiting...
 ### Load Words from JSON
 
 - Load words from a JSON file into a Python dictionary.
-
-Feel free to explore and contribute to make this typing test application even better!
 
 ---

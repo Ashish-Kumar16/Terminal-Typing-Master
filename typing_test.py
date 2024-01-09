@@ -1,3 +1,10 @@
+import random
+import time
+import json
+import sys
+
+WORDS_FILE_PATH = "words.json"
+LEADERBOARD_FILE_PATH = "leaderboard.json"
 # username_input
 
 def get_username():
@@ -5,7 +12,7 @@ def get_username():
 
 # start_typing_test
 
-def start_typing_test(words_to_type):
+def start_typing_test(words_to_type,username):
     print("\nTyping test starts now! Type the following words:")
     start_time = time.time()
     words_typed = get_user_input()
@@ -19,6 +26,7 @@ def start_typing_test(words_to_type):
     print(f"Words Per Minute: {words_per_minute} WPM")
 
     update_leaderboard(username, words_per_minute)
+
 # show_leaderboard
 
 def show_leaderboard():
@@ -30,11 +38,13 @@ def show_leaderboard():
             print(f"{entry['username']}: {entry['wpm']} WPM")
     except FileNotFoundError:
         print("\nLeaderboard is empty.")
+
 # exit_program
 
 def exit_program():
     print("Exiting...")
     sys.exit(0)
+
 # update_leaderboard
 
 def update_leaderboard(username, wpm):
@@ -49,6 +59,7 @@ def update_leaderboard(username, wpm):
 
     with open(LEADERBOARD_FILE_PATH, 'w') as file:
         json.dump(leaderboard, file)
+
 # load_words_from_json
 
 def load_words_from_json():
@@ -59,6 +70,7 @@ def load_words_from_json():
     except (FileNotFoundError, json.JSONDecodeError):
         print("Error: Unable to load words. Please check the format of 'words.json'.")
         sys.exit(1)
+
 # get_user_input
 
 def get_user_input():
@@ -67,6 +79,7 @@ def get_user_input():
     except KeyboardInterrupt:
         print("\nExiting...")
         sys.exit(0)
+
 # main_logic
 
 def main():
@@ -85,7 +98,7 @@ def main():
             words = load_words_from_json()
             random.shuffle(words)
 
-            start_typing_test(words)
+            start_typing_test(words,username)
 
         elif choice == '2':
             show_leaderboard()

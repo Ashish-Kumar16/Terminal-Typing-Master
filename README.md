@@ -1,81 +1,43 @@
-# Terminal Typing Master
+ **# Terminal Typing Master**
 
-Welcome to the Terminal Typing Master, a simple typing test application in Python. This application allows users to test their typing speed by presenting a set of random words and measuring metrics such as words per minute (WPM).
-
-## Prerequisites
-
-- Python 3.x installed
-- Basic understanding of file I/O, data structures (list, dictionaries), and JSON format.
-
-## Getting Started
-
-1. Clone the repository:
-
-   ```bash
-   git clone <repository-url>
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd terminal-typing-master
-   ```
-
-3. Run the application:
-
-   ```bash
-   python typing_test.py
-   ```
+**A simple typing test game to practice and improve your typing skills in the terminal.**
 
 ## Features
 
-### Username Input
+- **Typing Tests:** Challenge yourself with randomly generated word lists.
+- **Leaderboard:** Track your progress and see how you stack up against others.
+- **User-friendly Interface:** Easy to navigate and use.
+- **Customizable Word Lists:** Add your own words to create personalized tests.
 
-- Prompt users to enter their username.
+## Getting Started
 
-```python
-# Example
-Enter your username:
-```
+1. **Install Required Modules:**
+   ```bash
+   pip install random time json sys
+   ```
+2. **Run the Program:**
+   ```bash
+   python typing_master.py
+   ```
 
-### Start Typing Test
+## Usage
 
-- Initiate a typing test with random words.
-- Measure and display typing metrics (Words Typed, Time Taken, WPM).
+1. **Enter your username.**
+2. **Choose from the following options:**
+   - **Start Typing Test:** Begin a typing test with a randomly generated word list.
+   - **Show Leaderboard:** View the top scores and rankings.
+   - **Exit:** Quit the program.
 
-```python
-# Example
-Typing test starts now! Type the following words:
-apple banana keyboard ...
-```
+## Rules
 
-### Show Leaderboard
+- Type the words exactly as they are displayed, including capitalization and punctuation.
+- Press Enter after typing the last word.
+- Your typing speed (words per minute) and accuracy will be calculated and displayed.
+- Your score will be saved to the leaderboard if you rank among the top 5.
 
-- Display a leaderboard of top users based on their typing speed.
+## Additional Notes
 
-```python
-# Example
-Leaderboard:
-user1: 80 WPM
-user2: 75 WPM
-...
-```
+- The word list is stored in a JSON file named `words.json`. You can modify this file to add or remove words.
+- The leaderboard is stored in a JSON file named `leaderboard.json`.
 
-### Exit Program
-
-- Allow users to exit the program gracefully.
-
-```python
-# Example
-Exiting...
-```
-
-### Update Leaderboard
-
-- Update and sort the leaderboard stored in a JSON file.
-
-### Load Words from JSON
-
-- Load words from a JSON file into a Python dictionary.
-
----
+**Have fun improving your typing skills!**

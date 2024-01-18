@@ -1,4 +1,4 @@
- **# Terminal Typing Master**
+#Terminal Typing Master**
 
 **A simple typing test game to practice and improve your typing skills in the terminal.**
 

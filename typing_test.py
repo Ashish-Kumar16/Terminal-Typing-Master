@@ -12,20 +12,37 @@ def get_username():
 
 # start_typing_test
 
-def start_typing_test(words_to_type,username):
+def start_typing_test(words_to_type, username):
     print("\nTyping test starts now! Type the following words:")
+
+    for word in words_to_type:
+        print(word, end=" ", flush=True)
+        time.sleep(1)  # Adjust the delay time if needed
+    print()
+
     start_time = time.time()
     words_typed = get_user_input()
     end_time = time.time()
 
+    typed_words_list = words_typed.split()
+    total_words = len(words_to_type)
+    correct_words = sum(w1 == w2 for w1, w2 in zip(words_to_type, typed_words_list))
+    wrong_words = total_words - correct_words
+
     time_taken = end_time - start_time
     words_per_minute = int((len(words_typed.split()) / time_taken) * 60)
+    accuracy = (correct_words / total_words) * 100
 
-    print(f"\nWords Typed: {len(words_typed.split())}")
+    print(f"\nWords Typed: {len(typed_words_list)}")
+    print(f"Total Words: {total_words}")
+    print(f"Correct Words: {correct_words}")
+    print(f"Wrong Words: {wrong_words}")
+    print(f"Accuracy: {round(accuracy, 2)}%")
     print(f"Time Taken: {round(time_taken, 2)} seconds")
     print(f"Words Per Minute: {words_per_minute} WPM")
 
-    update_leaderboard(username, words_per_minute)
+    update_leaderboard(username, words_per_minute, accuracy)  
+
 
 # show_leaderboard
 

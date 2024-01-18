@@ -67,18 +67,21 @@ def exit_program():
 
 # update_leaderboard
 
-def update_leaderboard(username, wpm):
+def update_leaderboard(username, wpm, accuracy):
     try:
         with open(LEADERBOARD_FILE_PATH, 'r') as file:
             leaderboard = json.load(file)
     except FileNotFoundError:
         leaderboard = []
 
-    leaderboard.append({"username": username, "wpm": wpm})
+    leaderboard.append({"username": username, "wpm": wpm, "accuracy": accuracy})
     leaderboard = sorted(leaderboard, key=lambda x: x["wpm"], reverse=True)[:5]
 
-    with open(LEADERBOARD_FILE_PATH, 'w') as file:
-        json.dump(leaderboard, file)
+    try:
+        with open(LEADERBOARD_FILE_PATH, 'w') as file:
+            json.dump(leaderboard, file)
+    except Exception as e:
+        print(f"Error updating leaderboard: {e}")
 
 # load_words_from_json
 

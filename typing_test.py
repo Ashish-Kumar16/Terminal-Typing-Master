@@ -52,7 +52,10 @@ def show_leaderboard():
             leaderboard = json.load(file)
         print("\nLeaderboard:")
         for entry in leaderboard:
-            print(f"{entry['username']}: {entry['wpm']} WPM")
+            username = entry['username']
+            wpm = entry['wpm']
+            accuracy = entry.get('accuracy', 'N/A')  # Use 'N/A' if 'accuracy' key is not present
+            print(f"{username}: {wpm} WPM, Accuracy: {accuracy}%")
     except FileNotFoundError:
         print("\nLeaderboard is empty.")
 
